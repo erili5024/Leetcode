@@ -12,7 +12,7 @@ class Solution:
             return
         if(root.val >= maxed):
             self.nodes.append(root)
-        maxed = max(maxed, root.val)
+            maxed = root.val
         self.ifGood(root.left, maxed)
         self.ifGood(root.right, maxed)
     def goodNodes(self, root: TreeNode) -> int:
