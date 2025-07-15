@@ -7,14 +7,16 @@
 class Solution:
     def __init__(self):
         self.arr1 = []
-    def findChild(self, root: Optional[TreeNode]) -> None:
-        if not root:
-            return
-        if not root.left and not root.right:
+    def findChild(self, root: Optional[TreeNode]) -> int:
+        if root is None:
+            return 0  
+        left = self.findChild(root.left)
+        right = self.findChild(root.right)
+
+        if left == 0 and right == 0:
             self.arr1.append(root.val)
-            return
-        self.findChild(root.left)
-        self.findChild(root.right)
+
+        return 1  
     def leafSimilar(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> bool:
         self.arr1 = []
         self.findChild(root1)
