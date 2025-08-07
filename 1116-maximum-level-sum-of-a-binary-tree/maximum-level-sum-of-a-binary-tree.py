@@ -23,9 +23,7 @@ class Solution:
             if node.right:
                 queue.append([node.right, level + 1])
             if not queue or level != queue[0][1]:
-                print(sum)
                 if sum > maxed:
-                    print(sum)
                     maxed = sum 
                     levels = level
                 sum = 0
